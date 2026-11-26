@@ -1,6 +1,6 @@
 # Restore on the new account (template, adapted in step 5)
 
-Run while signed in to the **new** account. Read `PROGRESS.md` and `INVENTORY.md` first. Restore only what exists in OUT.
+Run while signed in to the **new** account. Confirm you are on the new account, then read `PROGRESS.md` and `INVENTORY.md`. Restore only what exists in OUT.
 
 ## Order
 1. **Memory**: claude.ai > Settings > Capabilities > Memory > import memory from another provider. The user pastes `01-memory/MEMORY.md`, then tells you what was kept.

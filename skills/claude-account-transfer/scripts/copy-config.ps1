@@ -1,5 +1,5 @@
 # Copy Claude Desktop + Claude Code config to OUT, without credentials.
-# Usage: powershell -ExecutionPolicy Bypass -File copy-config.ps1 -Out E:\TRANSFER [-WithHistory]
+# Usage: powershell -ExecutionPolicy Bypass -File copy-config.ps1 -Out E:\CLAUDE-BACKUP-YYYY-MM-DD [-WithHistory]
 param([Parameter(Mandatory=$true)][string]$Out, [switch]$WithHistory,
       [string]$DesktopDir = "05-claude-desktop", [string]$CodeDir = "06-claude-code")
 

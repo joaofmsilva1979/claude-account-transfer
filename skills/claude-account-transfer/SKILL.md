@@ -9,16 +9,18 @@ There is no built-in transfer between two Claude accounts. Conversations cannot 
 
 Talk to the user in their language. Assume they are not a developer. One question at a time.
 
-## Two phases, two Claudes
+## Two phases, two accounts
 
-- **Phase A, on the OLD account** (before it is closed): inventory, sort, export, profile, then build an import kit.
-- **Phase B, on the NEW account**: a Claude that knows nothing runs the import kit written in phase A.
+- **Phase A: BACKUP, run on the account to duplicate** (before it is closed). Produces one self-describing backup folder: the data, plus the instructions a new Claude needs to import it.
+- **Phase B: IMPORT, run on the new account.** The user hands the backup folder to Claude; Claude reads the backup's own `CLAUDE.md` and imports.
 
-If you cannot tell which phase you are in, ask.
+Decide the phase first:
+- the folder you are given (or the current folder) contains a `CLAUDE.md` with a `# Claude backup` header → **Phase B**;
+- otherwise ask: "Is this the account you want to copy, or the new account?" Never guess: running a backup on the new account would save an empty setup.
 
-## Phase A
+## Phase A: backup
 
-1. Ask for the destination drive and create `TRANSFER/` on it (called **OUT** below). Create `OUT/PROGRESS.md`: one line per step, status, date. Update it after each step; if the session stops, resume from it.
+1. Confirm with the user that **this** is the account to duplicate. Ask for the destination (external drive, synced folder) and create `CLAUDE-BACKUP-<YYYY-MM-DD>/` there (called **OUT** below). Create `OUT/PROGRESS.md`: one line per step, status, date. Update it after each step; if the session stops, resume from it.
 2. Run each step in order. Read the reference file **when you start the step**, not before.
 
 | # | Step | Reference |
@@ -27,14 +29,19 @@ If you cannot tell which phase you are in, ask.
 | 2 | Sort: what leaves, what stays | `references/02-sort.md` |
 | 3 | Export to OUT | `references/03-export.md` |
 | 4 | Working profile | `references/04-profile.md` |
-| 5 | Build the import kit for phase B | `references/05-import-kit.md` |
+| 5 | Make the backup self-describing (import instructions for the new account) | `references/05-import-kit.md` |
 | 6 | Checks (export part) | `references/06-checks.md` |
 
 Tell the user upfront: about one hour, can be split across sessions, everything must be finished **before** the old account is closed.
 
-## Phase B
+## Phase B: import
 
-If OUT contains a `CLAUDE.md` written in phase A, follow it. Otherwise use `references/restore-template.md` with what you find in OUT, then the restore part of `references/06-checks.md`.
+The backup must be assigned to the new account's Claude in one of three ways (see `OUT/START-HERE.md`):
+1. **Claude Code**: open a terminal in the backup folder, run `claude`, type `Import my backup.` The backup's `CLAUDE.md` loads automatically.
+2. **Claude Desktop with file access**: choose the backup folder, type `Read CLAUDE.md in this folder and import my backup.`
+3. **claude.ai only**: create a project named "Claude import", upload `CLAUDE.md`, `WORKING-PROFILE.md`, `01-memory/MEMORY.md`, `02-instructions/*` to it, and type `Import my backup.` in that project. Local config files (Desktop, Claude Code) are then copied by the user, guided step by step.
+
+Then follow the backup's `CLAUDE.md`. If it is missing, use `references/restore-template.md` with what you find, then the restore part of `references/06-checks.md`. Once the import is checked, the "Claude import" project can be deleted; keep `WORKING-PROFILE.md` in the projects that matter.
 
 ## Non-negotiable rules
 

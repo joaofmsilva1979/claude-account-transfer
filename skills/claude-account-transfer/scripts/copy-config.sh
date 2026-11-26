@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Copy Claude Desktop + Claude Code config to OUT, without credentials.
-# Usage: bash copy-config.sh /path/to/TRANSFER [--with-history]
+# Usage: bash copy-config.sh /path/to/CLAUDE-BACKUP-YYYY-MM-DD [--with-history]
 set -euo pipefail
 OUT="${1:?usage: copy-config.sh OUT [--with-history]}"
 HIST="${2:-}"
