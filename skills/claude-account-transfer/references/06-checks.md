@@ -10,6 +10,7 @@ Each line is ticked with evidence: a number, a file opened, a search that return
 - [ ] `WORKING-PROFILE.md` validated by the user (their answer noted in `PROGRESS.md`).
 - [ ] Every file named in `OUT/CLAUDE.md` exists (expected 0 missing).
 - [ ] Total size and file count of OUT noted.
+- [ ] `CONNECTORS.md`: one row per connector found, each with connected account and decision filled (rows missing a decision: expected 0).
 - [ ] The user confirms everything was retrieved before access to the old account ends.
 
 ## After restore (new account)
@@ -19,5 +20,6 @@ Each line is ticked with evidence: a number, a file opened, a search that return
 - [ ] Projects recreated = folders in `03-project-files`.
 - [ ] Claude Code: `claude` starts on the new account and `CLAUDE.md` is loaded (ask it to summarize it).
 - [ ] Tone test passed (see restore template).
+- [ ] Connectors: section 5 of `references/connectors.md` (connected and tested = planned; 0 mentions of dropped connectors).
 
 When all are ticked: one sentence to close, and a reminder that the drive holds copies of their setup and should be stored safely.

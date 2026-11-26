@@ -14,7 +14,7 @@ One page:
 Write it **from what you observed**, not from a generic template:
 - Who the person is, 5 lines from `WORKING-PROFILE.md`: how to talk to them, what they expect.
 - What OUT contains: the real list of folders and files, with counts.
-- Restore steps adapted from `references/restore-template.md`: remove what does not apply (no Claude Code section if they never used it, no projects if none were kept), add what is specific (names of their projects, skills, connectors).
+- Restore steps adapted from `references/restore-template.md`: remove what does not apply (no Claude Code section if they never used it, no projects if none were kept), add what is specific (names of their projects, skills). Copy the connector rows of `CONNECTORS.md` with their decision, and section 4 of `references/connectors.md` in full (the new Claude will not have this skill).
 - Rules: `.bak` before overwriting, consent before each action, re-enter `<RE-ENTER>` values with them, invent nothing.
 - The tone test and the restore checks.
 - Final instruction: after restore, add `WORKING-PROFILE.md` to the new account (preferences + projects) and offer to update it in a month.

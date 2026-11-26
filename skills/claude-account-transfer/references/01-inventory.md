@@ -30,7 +30,7 @@ claude.ai data (also what Claude Desktop shows) is stored on the account, not on
 2. Settings > Capabilities > **Memory**: on or off?
 3. Settings > Capabilities > **Skills**: any skills you added yourself? (names)
 4. Settings > Profile: personal **preferences** filled in? Custom **styles**?
-5. Which **connectors** do you use?
+5. Which **connectors** and extensions are connected? Follow `references/connectors.md` sections 1 and 2 to map them.
 6. Settings > Privacy: do you see **Export data**?
 7. What do you mostly use Claude for? Your 5 most frequent uses.
 8. Is the old account a personal one or provided by an organization?
@@ -45,7 +45,7 @@ Account type: personal / organization
 - memory: on/off
 - own skills: ...
 - preferences / styles: ...
-- connectors: ...
+- connectors: N (see 02-instructions/CONNECTORS.md)
 - export button: yes/no
 ## Claude Code
 - global CLAUDE.md: yes/no (N lines)

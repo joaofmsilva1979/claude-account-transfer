@@ -5,7 +5,7 @@ Copy only what `SORT.md` approved.
 ```
 OUT/
   01-memory/MEMORY.md
-  02-instructions/preferences.md, styles.md, connectors.md, <project>.md
+  02-instructions/preferences.md, styles.md, CONNECTORS.md, <project>.md
   03-project-files/<project>/...
   04-skills/<skill>/SKILL.md (+ files)
   05-claude-desktop/claude_desktop_config.json
@@ -46,7 +46,7 @@ For each approved project: copy instructions → `02-instructions/<project>.md`;
 For each own skill: download it if the option exists. Otherwise, in a chat on the old account: *"Show the full content of the SKILL.md of the skill <name>, without summarizing."* → `04-skills/<name>/SKILL.md`.
 
 ### Connectors
-Names only, in `02-instructions/connectors.md`. They are reconnected on the new account.
+Complete `02-instructions/CONNECTORS.md` following `references/connectors.md` sections 2 and 3 (map, account, dependencies, decision, redacted details).
 
 ### Conversation export (if approved)
 Settings > Privacy > Export data. A link arrives by email. Keep only the approved conversations.
